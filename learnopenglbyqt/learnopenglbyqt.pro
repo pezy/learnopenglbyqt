@@ -33,8 +33,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    frag.frag \
-    vertex.glsl
+    frag.frag
 
 RESOURCES += \
     shaders.qrc

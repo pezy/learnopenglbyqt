@@ -1,12 +1,14 @@
 #ifndef GLWIDGET_H
 #define GLWIDGET_H
 
-#include <QOpenGLBuffer>
 #include <QOpenGLFunctions>
 #include <QOpenGLWidget>
+#include <QVector>
 
 QT_FORWARD_DECLARE_CLASS(QOpenGLShaderProgram)
 QT_FORWARD_DECLARE_CLASS(QOpenGLTexture)
+QT_FORWARD_DECLARE_CLASS(QOpenGLVertexArrayObject)
+QT_FORWARD_DECLARE_CLASS(QOpenGLBuffer)
 
 class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
   Q_OBJECT
@@ -25,8 +27,10 @@ class GLWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 
  private:
   QOpenGLTexture* texture_ = nullptr;
-  QOpenGLShaderProgram* program_ = nullptr;
-  QOpenGLBuffer vbo_;
+  QVector<QOpenGLShaderProgram*> programs_;
+  QVector<QOpenGLVertexArrayObject*> vaos_;
+  QVector<QOpenGLBuffer*> vbos_;
+  // QOpenGLBuffer ebo_;
 };
 
 #endif  // GLWIDGET_H

@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>vertex.glsl</file>
-        <file>frag.glsl</file>
+        <file>orange.glsl</file>
+        <file>yellow.glsl</file>
     </qresource>
 </RCC>
